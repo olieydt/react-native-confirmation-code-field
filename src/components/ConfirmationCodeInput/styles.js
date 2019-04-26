@@ -86,7 +86,7 @@ const MIN_FONT_SIZE = 14;
 
 export const getCellStyle = (props: Props, { isActive }: Options) => {
   const { size, inactiveColor, activeColor, variant } = props;
-
+  let lineHeight = Platform.OS === 'android' ? 0.001 : size * 0.9
   return {
     color: activeColor,
     fontSize: clampMin(MIN_FONT_SIZE, 0.5 * size),
@@ -102,6 +102,6 @@ export const getCellStyle = (props: Props, { isActive }: Options) => {
 
     ...getBorderWidthStyle(props),
     ...getInputSpaceStyle(props),
-    lineHeight: 0.001
+    lineHeight: lineHeight
   };
 };
