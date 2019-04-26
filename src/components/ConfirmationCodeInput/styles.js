@@ -102,12 +102,6 @@ export const getCellStyle = (props: Props, { isActive }: Options) => {
 
     ...getBorderWidthStyle(props),
     ...getInputSpaceStyle(props),
-
-    ...Platform.select({
-      web: {
-        borderStyle: 'solid',
-        lineHeight: size * 0.9,
-      },
-    }),
+    lineHeight: 0.001
   };
 };
